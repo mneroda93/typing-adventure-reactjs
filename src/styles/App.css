@@ -1,0 +1,48 @@
+* {
+	font-family: "Consolas", serif;
+	color: white;
+	text-shadow: .1rem .1rem rgba(0, 0, 0, .15);
+	box-sizing: border-box;
+	user-select: none;
+}
+
+body {
+	margin: 0;
+	overflow: hidden;
+}
+
+.app {
+	height: 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.app:focus {
+	outline: none;
+}
+
+.linkedIn {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 2rem;
+	height: 2rem;
+	margin: 1rem;
+	transition: all .3s ease-in-out;
+}
+
+.linkedIn:hover {
+	width: 3rem;
+	height: 3rem;
+	margin: 0.5rem;
+}
+
+
+
+
