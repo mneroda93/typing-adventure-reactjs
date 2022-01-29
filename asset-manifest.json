@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/typing-adventure-reactjs/static/css/main.68528beb.css",
-    "main.js": "/typing-adventure-reactjs/static/js/main.faa742bf.js",
+    "main.js": "/typing-adventure-reactjs/static/js/main.a848cd62.js",
     "static/js/787.0da2fd95.chunk.js": "/typing-adventure-reactjs/static/js/787.0da2fd95.chunk.js",
     "static/media/wallpaper.jpg": "/typing-adventure-reactjs/static/media/wallpaper.63af07a6e399acfe81e7.jpg",
     "static/media/Merriweather-Light.ttf": "/typing-adventure-reactjs/static/media/Merriweather-Light.43706a2883eb57c79284.ttf",
@@ -9,11 +9,11 @@
     "index.html": "/typing-adventure-reactjs/index.html",
     "static/media/linkedin.svg": "/typing-adventure-reactjs/static/media/linkedin.dfa04db162fcd8f7a47d0bbb29bf8d9a.svg",
     "main.68528beb.css.map": "/typing-adventure-reactjs/static/css/main.68528beb.css.map",
-    "main.faa742bf.js.map": "/typing-adventure-reactjs/static/js/main.faa742bf.js.map",
+    "main.a848cd62.js.map": "/typing-adventure-reactjs/static/js/main.a848cd62.js.map",
     "787.0da2fd95.chunk.js.map": "/typing-adventure-reactjs/static/js/787.0da2fd95.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.68528beb.css",
-    "static/js/main.faa742bf.js"
+    "static/js/main.a848cd62.js"
   ]
 }
