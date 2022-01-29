@@ -19,7 +19,8 @@ export default function Stats(
     } else if (kpm === 0 && typos > 0) {
       return 0;
     } else {
-      return (((kpm - typos) / kpm) * 100).toFixed(1);
+      const totalKeys = kpm + typos;
+      return (kpm / totalKeys * 100).toFixed(1);
     }
   })();
 
@@ -40,7 +41,7 @@ export default function Stats(
         </div>
         <>
           <RestartSVG
-            className="icon"
+            className="icon restart"
             onClick={() => {
               restart();
             }}

@@ -6,6 +6,7 @@ import {ReactComponent as LinkedInSVG} from "../assets/linkedin.svg";
 import Timer from "./Timer";
 import Words from "./Words";
 import Stats from "./Stats";
+import "../assets/Merriweather-Light.ttf";
 
 export default function App() {
 
@@ -72,11 +73,22 @@ export default function App() {
           }
         }}
       >
+        <div style={{textAlign:'center'}}>
+          <span style={{fontSize:'2rem'}}>Welcome to</span>
+          <span style={{fontSize:'5rem'}}>Typing Adventure</span>
+          <div>
+            <span style={{fontSize:'1.5rem'}}>Have you ever wondered how many words you can type a minute?</span>
+            <div>
+              <span style={{fontSize:'1.5rem'}}>Don't wonder anymore, just <span style={{color: 'orange'}}>start typing</span> and you will know!</span>
+            </div>
+          </div>
+        </div>
         <Timer
           started={started}
           finished={finished}
           timeRef={timeRef}
         />
+
         <Words
           words={words}
           index={index}

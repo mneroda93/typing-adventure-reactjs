@@ -1,5 +1,10 @@
+@font-face {
+	font-family: Merriweather;
+	src: local("src/assets/Merriweather-Light.ttf");
+}
+
 * {
-	font-family: "Consolas", serif;
+	font-family: Merriweather, serif;
 	color: white;
 	text-shadow: .1rem .1rem rgba(0, 0, 0, .15);
 	box-sizing: border-box;
