@@ -79,7 +79,7 @@ export default function App() {
           <div>
             <span style={{fontSize:'1.5rem',textShadow:'3px 3px 1px rgba(0,0,0,0.2)'}}>Have you ever wondered how many words you can type a minute?</span>
             <div>
-              <span style={{fontSize:'1.5rem',textShadow:'3px 3px 1px rgba(0,0,0,0.2)'}}>Now you can, just <span style={{color: 'orange'}}>start typing</span> and find out!</span>
+              <span style={{fontSize:'1.5rem',textShadow:'3px 3px 1px rgba(0,0,0,0.2)'}}><span style={{color: 'orange'}}>Start typing</span> and find out!</span>
             </div>
           </div>
         </div>

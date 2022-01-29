@@ -17,7 +17,7 @@ export default function Timer({started, finished, timeRef}) {
       setSeconds(0);
     }
     return () => clearInterval(countdown.current);
-  }, [seconds, started]);
+  }, [seconds, started, timeRef]);
 
   const h = Math.floor(seconds / 60 / 60);
   const m = Math.floor(seconds / 60) % 60;
