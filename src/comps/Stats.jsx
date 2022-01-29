@@ -7,7 +7,7 @@ export default function Stats(
     wpmRef,
     typosRef,
     restart,
-    time,
+    timeRef,
   }
 ) {
 
@@ -23,7 +23,7 @@ export default function Stats(
     }
   })();
 
-  const wpm = time === 0 ? 0 : 60 / time * wpmRef.current
+  const wpm = timeRef.current === 0 ? 0 : 60 / timeRef.current * wpmRef.current
 
   return (
     <>

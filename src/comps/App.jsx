@@ -10,31 +10,23 @@ import Stats from "./Stats";
 export default function App() {
 
   const wordsGenerator = () => {
-    const indexes = (() => {
-      const arr = [];
-      let i = 0;
-      for (i; i < 30; i++)
-        arr[i] = i;
-      return arr;
-    })();
     let wordsStr = '';
-    let i = indexes.length;
-    for (i; i > 0; i--) {
-      const rndIndex = Math.floor(Math.random() * i);
-      wordsStr += WordsJSON[indexes[rndIndex]] + ' ';
-      indexes.splice(rndIndex, 1);
+    let i = 0;
+    const forbidden = [];
+    for (i; i < 30; i++) {
+      let generated;
+      while(!generated || forbidden.includes(generated)) {
+        generated = Math.floor(Math.random() * 1000);
+      }
+      wordsStr += WordsJSON[generated] + ' ';
+      forbidden.push(generated);
     }
     return wordsStr;
   }
 
   const [words, setWords] = useState(wordsGenerator());
 
-  const [time, setTime] = useState(0);
-
-  const getTime = (timeTook) => {
-    setTime(timeTook);
-  }
-
+  const timeRef = useRef(0);
   const kpmRef = useRef(0);
   const wpmRef = useRef(0);
   const typosRef = useRef(0);
@@ -47,7 +39,7 @@ export default function App() {
     if (divRef.current) {
       divRef.current.focus();
     }
-  }, [divRef.current]);
+  }, []);
 
   const [index, setIndex] = useState(0);
   const [refresh, setRefresh] = useState(false);
@@ -71,7 +63,7 @@ export default function App() {
               typosRef.current = typosRef.current + 1;
               setRefresh(!refresh);
             }
-            if (index > 108) {
+            if (index > words.length - 2) {
               setFinished(true);
             }
             if (!started) {
@@ -83,7 +75,7 @@ export default function App() {
         <Timer
           started={started}
           finished={finished}
-          getTime={getTime}
+          timeRef={timeRef}
         />
         <Words
           words={words}
@@ -97,13 +89,13 @@ export default function App() {
             kpmRef.current = 0;
             wpmRef.current = 0;
             typosRef.current = 0;
+            timeRef.current = 0;
             setWords(wordsGenerator());
             setStarted(false);
             setFinished(false);
-            setTime(0);
             setIndex(0);
           }}
-          time={time}
+          timeRef={timeRef}
         />
       </div>
       <LinkedInSVG

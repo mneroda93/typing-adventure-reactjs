@@ -1,9 +1,7 @@
 import '../styles/Timer.css';
 import {useEffect, useRef, useState} from "react";
 
-export default function Timer({started, finished, getTime}) {
-
-
+export default function Timer({started, finished, timeRef}) {
   const [seconds, setSeconds] = useState(0);
 
   const countdown = useRef(null);
@@ -12,7 +10,7 @@ export default function Timer({started, finished, getTime}) {
     if (started) {
       countdown.current = setTimeout(() => {
         setSeconds(seconds + 1);
-        getTime(seconds + 1);
+        timeRef.current = timeRef.current + 1;
       }, 1000);
     } else {
       clearInterval(countdown.current);
@@ -26,7 +24,6 @@ export default function Timer({started, finished, getTime}) {
   const s = seconds % 60;
 
   if (finished) {
-    getTime(seconds);
     clearInterval(countdown.current);
   }
 
