@@ -8,8 +8,8 @@ export default function Words({words, index}) {
     <div className="words">
       <pre className="wrapper">
         <span className="done">
-        {words.slice(0, index)}
-          </span>
+          {words.slice(0, index)}
+        </span>
         <span
           className={finished ? "" : (spaceLetter ? "marked-space" : "marked")}
           style={{display: 'inline'}}

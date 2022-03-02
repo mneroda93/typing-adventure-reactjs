@@ -8,19 +8,23 @@ import Words from "./Words";
 import Stats from "./Stats";
 import "../assets/Merriweather-Light.ttf";
 
-export default function App() {
+export default function App() { // create pool of indexes and by random length of the pool, pull out one index - best
 
   const wordsGenerator = () => {
+    const orderedIndexes = (() => { // arr of ordered integers 0 -> 999
+      const indexes = [];
+      let i = 0;
+      for (i; i < 1000; i++) {
+        indexes.push(i);
+      }
+      return indexes;
+    })();
     let wordsStr = '';
     let i = 0;
-    const forbidden = [];
     for (i; i < 30; i++) {
-      let generated;
-      while(!generated || forbidden.includes(generated)) {
-        generated = Math.floor(Math.random() * 1000);
-      }
-      wordsStr += WordsJSON[generated] + ' ';
-      forbidden.push(generated);
+      const rnd = Math.floor(Math.random() * orderedIndexes.length);
+      wordsStr += WordsJSON[rnd] + ' ';
+      orderedIndexes.splice(rnd, 1);
     }
     return wordsStr;
   }
@@ -73,13 +77,14 @@ export default function App() {
           }
         }}
       >
-        <div style={{textAlign:'center'}}>
-          <span style={{fontSize:'2rem',textShadow:'3px 3px 1px rgba(0,0,0,0.2)'}}>Welcome to</span>
-          <span style={{fontSize:'5rem',textShadow:'3px 3px 1px rgba(0,0,0,0.2)'}}>Typing Adventure</span>
+        <div style={{textAlign: 'center'}}>
+          <span style={{fontSize: '2rem', textShadow: '3px 3px 1px rgba(0,0,0,0.2)'}}>Welcome to</span>
+          <span style={{fontSize: '5rem', textShadow: '3px 3px 1px rgba(0,0,0,0.2)'}}>Typing Adventure</span>
           <div>
-            <span style={{fontSize:'1.5rem',textShadow:'3px 3px 1px rgba(0,0,0,0.2)'}}>Have you ever wondered how many words you can type a minute?</span>
+            <span style={{fontSize: '1.5rem', textShadow: '3px 3px 1px rgba(0,0,0,0.2)'}}>Have you ever wondered how many words you can type a minute?</span>
             <div>
-              <span style={{fontSize:'1.5rem',textShadow:'3px 3px 1px rgba(0,0,0,0.2)'}}><span style={{color: 'orange'}}>Start typing</span> and find out!</span>
+              <span style={{fontSize: '1.5rem', textShadow: '3px 3px 1px rgba(0,0,0,0.2)'}}><span
+                style={{color: 'orange'}}>Start typing</span> and find out!</span>
             </div>
           </div>
         </div>
@@ -88,7 +93,6 @@ export default function App() {
           finished={finished}
           timeRef={timeRef}
         />
-
         <Words
           words={words}
           index={index}
