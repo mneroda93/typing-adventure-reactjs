@@ -8,10 +8,10 @@ import Words from "./Words";
 import Stats from "./Stats";
 import "../assets/Merriweather-Light.ttf";
 
-export default function App() {
+export default function App() { // create pool of indexes and by random length of the pool, pull out one index - best
 
   const wordsGenerator = () => {
-    const orderedIndexes = (() => {
+    const orderedIndexes = (() => { // arr of ordered integers 0 -> 999
       const indexes = [];
       let i = 0;
       for (i; i < 1000; i++) {
